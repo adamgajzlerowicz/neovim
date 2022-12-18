@@ -6,6 +6,6 @@ local defaults = { noremap = true, silent = true }
 
 
 map("i", "jj", "<esc>", defaults)
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>v", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>l", vim.cmd.wa)
 
