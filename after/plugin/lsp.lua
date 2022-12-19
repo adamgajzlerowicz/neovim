@@ -65,6 +65,18 @@ require('lspconfig')['eslint'].setup {
     },
 }
 
+local fleximizer = {
+    root = "/Users/adam/projects/cmp-main/services/flexsave/aws/optimizer/fleximizer",
+}
+
+require('lspconfig').pyright.setup {
+    settings = {
+        executionEnvironments = {
+            fleximizer,
+        }
+    },
+}
+
 
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',

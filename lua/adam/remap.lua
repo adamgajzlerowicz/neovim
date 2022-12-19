@@ -8,6 +8,7 @@ local defaults = { noremap = true, silent = true }
 map("i", "jj", "<esc>", defaults)
 
 vim.keymap.set("n", "<leader>v", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>c", ":ccl<cr>")
 
 vim.keymap.set("n", "<leader>e", function() vim.cmd.Neotree("filesystem", "reveal", "left", "toggle") end)
 vim.keymap.set("n", "<leader>o", function() vim.cmd.Neotree("focus", "reveal") end)
