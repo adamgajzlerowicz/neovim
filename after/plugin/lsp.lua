@@ -60,9 +60,12 @@ require'lspconfig'.sumneko_lua.setup {
     }
 }
 
-require('lspconfig')['eslint'].setup {
+require('lspconfig').eslint.setup {
     settings = {
     },
+    diagnostics = {
+        run_on = "save"
+    }
 }
 
 local fleximizer = {
