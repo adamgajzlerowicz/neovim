@@ -35,10 +35,9 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
   vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
   vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
-  vim.keymap.set("n", "[d", vim.diagnostic.goto_next, opts)
-  vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
+  vim.keymap.set("n", "<leader>]", vim.diagnostic.goto_next, opts)
+  vim.keymap.set("n", "<leader>[", vim.diagnostic.goto_prev, opts)
   vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
---  vim.keymap.set("n", "gu", vim.lsp.buf.references, opts)
   vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
   vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 end)
@@ -62,10 +61,8 @@ require'lspconfig'.sumneko_lua.setup {
 
 require('lspconfig').eslint.setup {
     settings = {
+        run = "onSave"
     },
-    diagnostics = {
-        run_on = "save"
-    }
 }
 
 local fleximizer = {

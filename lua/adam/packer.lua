@@ -29,6 +29,7 @@ return require('packer').startup(function(use)
             {'hrsh7th/cmp-nvim-lsp'},
             {'hrsh7th/cmp-nvim-lua'},
 
+
             -- Snippets
             {'L3MON4D3/LuaSnip'},
             {'rafamadriz/friendly-snippets'},
@@ -48,6 +49,9 @@ return require('packer').startup(function(use)
     require("nebulous").setup {
         variant = "fullmoon",
     }
+
+
+
 
 
 end)
