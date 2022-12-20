@@ -1,35 +1,30 @@
 local ls = require("luasnip")
 
-local keymap = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-keymap("i", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
-keymap("s", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
-keymap("i", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
-keymap("s", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
+local s = ls.snippet
+local t = ls.text_node
+local i = ls.insert_node
 
-
--- some shorthands...
-local snip = ls.snippet
-local node = ls.snippet_node
-local text = ls.text_node
-local insert = ls.insert_node
-local func = ls.function_node
-local choice = ls.choice_node
-local dynamicn = ls.dynamic_node
-
-local date = function() return {os.date('%Y-%m-%d')} end
 
 ls.add_snippets(nil, {
     all = {
-        snip("cl",{
-            text('console.log("'),
-            insert(1),
-            text('")'),
+        s("cl",{
+            t('console.log("'),
+            i(1),
+            t('")'),
         }),
-        snip("cc",{
+        s("cc",{
+            t("type Props = {"),
+            t("", ""),
+            t("}", ""),
+            t("", ""),
+            t("export default function "),
+            i(1),
+            t("({}: Props) {"),
+            t("return "),
+            i(2),
+            t('}'),
 
-        })
+        }),
     },
 })
-
 
