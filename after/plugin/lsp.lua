@@ -6,13 +6,8 @@ lsp.ensure_installed({
 	"tsserver",
 	"eslint",
 	"sumneko_lua",
-    "go",
-    "javascript",
-    "typescript",
     "html",
-    "tsx",
     "graphql",
-    "json5",
 })
 
 
